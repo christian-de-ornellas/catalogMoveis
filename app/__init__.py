@@ -24,3 +24,6 @@ api.add_resource(LoginRouter, "/login")
 from app.resources.movie import MovieRouter
 api.add_resource(MovieRouter, "/movies")
 
+from app.resources.cast import CastRouter
+api.add_resource(CastRouter, "/casts")
+

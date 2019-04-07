@@ -52,9 +52,10 @@ class Cast(db.Model):
     movie_id = db.Column(db.Integer, db.ForeignKey("movies.id"))
     movie = db.relationship("Movie", foreign_keys=movie_id)
 
-    def __init__(self, role, name):
+    def __init__(self, role, name, movie_id):
         self.role = role
         self.name = name
+        self.movie_id = movie_id
 
     def __repr__(self):
         return f"<Cast: {self.role}"

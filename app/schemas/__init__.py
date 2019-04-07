@@ -13,3 +13,10 @@ movies_fields = {
     "director": fields.String,
     "genre": fields.String
 }
+
+casts_fields = {
+    "id": fields.Integer,
+    "role": fields.String,
+    "name": fields.String,
+    "movie_id": fields.Integer
+}

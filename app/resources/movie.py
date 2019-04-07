@@ -2,6 +2,7 @@ from flask_restful import Resource, marshal
 from app.models import Movie
 from app.schemas import movies_fields
 from app import request, db
+from app.decorator import jwt_required
 
 class MovieRouter(Resource):
 
@@ -9,7 +10,8 @@ class MovieRouter(Resource):
         movies = Movie.query.all()
         return marshal(movies, movies_fields, "movies")
 
-    def post(self):
+    @jwt_required
+    def post(self, current_user):
         credential = request.only(["title", "brazilian_title", "year_of_production", "director", "genre"])
 
         try:
@@ -20,7 +22,8 @@ class MovieRouter(Resource):
         except:
             return {"error": "Houve um erro ao tentar processar o seu pedido"}, 500
 
-    def delete(self):
+    @jwt_required
+    def delete(self, current_user):
 
         credential = request.only(["id"])
 
@@ -35,7 +38,8 @@ class MovieRouter(Resource):
         except:
             return {"error": "Houve um erro ao tentar processar o seu pedido"}, 500
 
-    def put(self):
+    @jwt_required
+    def put(self, current_user):
         
         credential = request.only(["id", "title", "brazilian_title", "year_of_production", "director", "genre"])
         movie = Movie.query.get(credential["id"])
