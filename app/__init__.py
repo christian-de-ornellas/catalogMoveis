@@ -16,7 +16,11 @@ api = Api(app, prefix="/api/v1")
 db = SQLAlchemy(app)
 CORS(app)
 
+
 from app.resources.auth import LoginRouter, RegisterRouter
 api.add_resource(RegisterRouter, "/register")
 api.add_resource(LoginRouter, "/login")
+
+from app.resources.movie import MovieRouter
+api.add_resource(MovieRouter, "/movies")
 
