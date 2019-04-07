@@ -23,7 +23,7 @@ class Movie(db.Model):
 
     __tablename__ = "movies"
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     title = db.Column(db.String)
     brazilian_title = db.Column(db.String)
     year_of_production = db.Column(db.Integer)
@@ -45,7 +45,7 @@ class Cast(db.Model):
 
     __tablename__ = "casts"
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     role = db.Column(db.String)
     name = db.Column(db.String)
 
