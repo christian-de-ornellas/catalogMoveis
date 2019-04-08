@@ -1,8 +1,9 @@
 from flask_restful import Resource, marshal
-from app.models import Cast
-from app.schemas import casts_fields
+from app.models import Cast, Movie
+from app.schemas import casts_fields, movies_fields, resource_fields
 from app import request, db
 from app.decorator import jwt_required
+
 
 class CastRouter(Resource):
 
@@ -54,5 +55,14 @@ class CastRouter(Resource):
             db.session.commit()
             return marshal(cast, casts_fields, "cast")
         except:
-            return {"error": "Houve um erro ao tentar processar o seu pedido"}, 500         
-                        
+            return {"error": "Houve um erro ao tentar processar o seu pedido"}, 500
+
+class CatalogRouter(Resource):
+
+    def get(self):
+        
+        #catalog = Movie.query.all()
+
+        catalog = db.session.query(Movie, Cast).join(Movie, Movie.id == Cast.movie_id).all()
+        return marshal(catalog, resource_fields, "movies")
+        

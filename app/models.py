@@ -30,6 +30,8 @@ class Movie(db.Model):
     director = db.Column(db.String)
     genre = db.Column(db.String)
 
+    movies = db.relationship("Cast", backref='movier')
+
     def __init__(self, title, brazilian_title, year_of_production, director, genre):
         self.title = title
         self.brazilian_title = brazilian_title
@@ -38,7 +40,7 @@ class Movie(db.Model):
         self.genre = genre
 
     def __repr__(self):
-        return f"<Movie: {self.title}"
+        return f"<Movie: {self.id}"
 
 
 class Cast(db.Model):
@@ -50,7 +52,7 @@ class Cast(db.Model):
     name = db.Column(db.String)
 
     movie_id = db.Column(db.Integer, db.ForeignKey("movies.id"))
-    movie = db.relationship("Movie", foreign_keys=movie_id)
+    #movie = db.relationship("Movie", foreign_keys=movie_id)
 
     def __init__(self, role, name, movie_id):
         self.role = role
