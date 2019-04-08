@@ -3,7 +3,7 @@
 ### Instalação
 
 1. clonar o repositório
-2. Abra um terminal com o directorio da pasta no você clonou a aplicação
+2. Abra um terminal com no diretorio da pasta onde você clonou a aplicação
 3. Execute no terminal *. venv/bin/activate* para acessar o ambiente virtual da aplicação
 4. Execute no terminal *venv/bin/pip3 install -r requirements.txt* para instalar as dependencias
 5. Com o ambiente virtual ativado execute no terminal *export FLASK_APP=main.py*
