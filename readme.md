@@ -4,14 +4,14 @@
 
 1. clonar o repositório
 2. Abra um terminal com no diretorio da pasta onde você clonou a aplicação
-3. Execute no terminal *. venv/bin/activate* para acessar o ambiente virtual da aplicação
-4. Execute no terminal *venv/bin/pip3 install -r requirements.txt* para instalar as dependencias
-5. Com o ambiente virtual ativado execute no terminal *export FLASK_APP=main.py*
-6. Agora execute no terminal o comando*flask shell* para acessar o shell do flask.
-7. No shell do flask execute o comando *db.create_all()* e um arquivo storage.db vai ser gerado na pasta app.
-8. Abra o *SQLITE* e importe o arquivo storage.db que foi gerado dentro da pasta app
-9. No terminal aperte ctrl + d para sair do shell e execute o comando *python3 main.py* para rodar a aplicação. 
-10. Abra o postman, importe a collection. Obs: O arquivo *Postman_collection.json* está na raiz do projeto.
+3. Execute no terminal: **. venv/bin/activate** para acessar o ambiente virtual da aplicação
+4. Execute no terminal: **venv/bin/pip3 install -r requirements.txt** para instalar as dependencias
+5. Com o ambiente virtual ativado execute no terminal: **export FLASK_APP=main.py** para exportar as instancias ao shell flask.
+6. Agora execute no terminal o comando: **flask shell** para acessar o shell.
+7. No shell do flask execute o comando **db.create_all()** e um arquivo storage.db vai ser gerado na pasta app.
+8. Abra o **SQLITE** e importe o arquivo storage.db que foi gerado dentro da pasta **app** com o nome de **storage.db**.
+9. No terminal **aperte ctrl + d** para sair do shell e execute o comando **python3 main.py** para rodar a aplicação. 
+10. Abra o postman, importe a collection. Obs: O arquivo **Postman_collection.json** está na raiz do projeto.
 
 ### Como usar 
 
